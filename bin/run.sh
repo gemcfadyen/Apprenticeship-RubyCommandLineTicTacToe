@@ -2,15 +2,14 @@
 
 #Setup Load Path
 lib = File.expand_path("../../lib", __FILE__)
-ttt_lib = File.expand_path("../../../Apprenticeship-RubyTicTacToe/lib", __FILE__)
-$:.unshift(lib).unshift(ttt_lib)
+$:.unshift(lib)
 
-require 'command_line_app'
-require 'command_line_ui'
 require 'board_factory'
+require 'command_line_app'
 require 'command_line_player_factory'
-require 'prompt_writer'
+require 'command_line_ui'
 require 'prompt_reader'
+require 'prompt_writer'
 
 writer = PromptWriter.new($stdout)
 reader = PromptReader.new($stdin)
