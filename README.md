@@ -1,5 +1,7 @@
 # Apprenticeship-RubyCommandLineTicTacToe
 
+[![Build Status](https://travis-ci.org/gemcfadyen/Apprenticeship-RubyCommandLineTicTacToe.svg?branch=master)](https://travis-ci.org/gemcfadyen/Apprenticeship-RubyCommandLineTicTacToe)    [![Coverage Status](https://coveralls.io/repos/github/gemcfadyen/Apprenticeship-RubyCommandLineTicTacToe/badge.svg?branch=adding-ci-and-coverage-to-cl-repo)](https://coveralls.io/github/gemcfadyen/Apprenticeship-RubyCommandLineTicTacToe?branch=adding-ci-and-coverage-to-cl-repo)
+
 Command Line Tic Tac Toe game implemented in Ruby
 
 To run the application clone the project into a folder
