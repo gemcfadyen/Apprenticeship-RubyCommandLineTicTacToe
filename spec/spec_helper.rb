@@ -17,9 +17,18 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
+require 'coveralls'
 require 'simplecov'
 
 SimpleCov.start
+SimpleCov.minimum_coverage 100
+
+Coveralls.wear!
+
+SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
+  SimpleCov::Formatter::HTMLFormatter,
+  Coveralls::SimpleCov::Formatter
+])
 
 lib = File.expand_path("../../lib", __FILE__)
 $:.unshift(lib)
@@ -49,8 +58,8 @@ RSpec.configure do |config|
     mocks.verify_doubled_constant_names = true
   end
 
-# The settings below are suggested to provide a good initial experience
-# with RSpec, but feel free to customize to your heart's content.
+  # The settings below are suggested to provide a good initial experience
+  # with RSpec, but feel free to customize to your heart's content.
 =begin
   # These two settings work together to allow you to limit a spec run
   # to individual examples or groups you care about by tagging them with

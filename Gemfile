@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'ttt-core', '0.0.1'
+gem 'ttt-core', '1.0.0'
 
 group :test do
   gem 'rake', '10.5.0'
