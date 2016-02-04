@@ -2,7 +2,7 @@ require 'player_factory'
 require 'human_player'
 
 class CommandLinePlayerFactory
-  def create_players(player_options, command_line_ui = nil)
+  def create_players(player_options, command_line_ui)
     if player_options == PlayerOptions::HUMAN_VS_HUMAN
       {
         PlayerSymbols::X => HumanPlayer.new(PlayerSymbols::X, command_line_ui),
