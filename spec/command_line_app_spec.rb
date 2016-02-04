@@ -5,6 +5,7 @@ require 'command_line_ui'
 require 'player_symbols'
 require 'player_factory'
 require 'board_factory'
+require 'human_player'
 
 RSpec.describe CommandLineApp do
   let(:command_line_app) { CommandLineApp.new(command_line_ui_spy, board_factory_spy, player_factory_spy) }
@@ -28,6 +29,7 @@ RSpec.describe CommandLineApp do
 
   it "creates board on start" do
     allow(board_factory_spy).to receive(:create_board).and_return(board_spy)
+    allow(board_spy).to receive(:grid_for_display).and_return([[], [], []])
     allow(command_line_ui_spy).to receive(:replay?).and_return(false)
     allow(player_factory_spy).to receive(:create_players).and_return(two_fake_players)
 
@@ -38,6 +40,7 @@ RSpec.describe CommandLineApp do
 
   it "asks for player types" do
     allow(board_factory_spy).to receive(:create_board).and_return(board_spy)
+    allow(board_spy).to receive(:grid_for_display).and_return([[], [], []])
     allow(player_factory_spy).to receive(:create_players).and_return(two_fake_players)
     allow(command_line_ui_spy).to receive(:replay?).and_return(false)
 
@@ -51,6 +54,7 @@ RSpec.describe CommandLineApp do
     allow(player_factory_spy).to receive(:create_players).and_return(two_fake_players)
     allow(command_line_ui_spy).to receive(:replay?).and_return(false)
     allow(board_factory_spy).to receive(:create_board).and_return(board_spy)
+    allow(board_spy).to receive(:grid_for_display).and_return([[], [], []])
 
     command_line_app.start
 
@@ -60,6 +64,7 @@ RSpec.describe CommandLineApp do
   it "asks user to replay" do
     allow(board_factory_spy).to receive(:create_board).and_return(board_spy)
     allow(player_factory_spy).to receive(:create_players).and_return(two_fake_players)
+    allow(board_spy).to receive(:grid_for_display).and_return([[], [], []])
 
     command_line_app.start
 
@@ -70,6 +75,7 @@ RSpec.describe CommandLineApp do
     allow(board_factory_spy).to receive(:create_board).and_return(board_spy).twice
     allow(player_factory_spy).to receive(:create_players).and_return(two_fake_players)
     allow(command_line_ui_spy).to receive(:replay?).and_return(true, false)
+    allow(board_spy).to receive(:grid_for_display).and_return([[], [], []])
 
     command_line_app.start
 
@@ -84,6 +90,8 @@ RSpec.describe CommandLineApp do
     fake_player_o = instance_double(HumanPlayer).as_null_object
     allow(fake_player_o).to receive(:ready?).and_return(true)
 
-    [fake_player_x, fake_player_o]
+    { PlayerSymbols::X => fake_player_x,
+      PlayerSymbols::O => fake_player_o
+    }
   end
 end

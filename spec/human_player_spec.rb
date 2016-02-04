@@ -6,7 +6,7 @@ require 'command_line_ui.rb'
 RSpec.describe HumanPlayer do
   let(:command_line_interface_spy) { instance_double(CommandLineUI) }
   let(:symbol) { PlayerSymbols::X }
-  let(:human) { HumanPlayer.new(command_line_interface_spy, symbol) }
+  let(:human) { HumanPlayer.new(symbol, command_line_interface_spy) }
 
   it "has a player symbol" do
     expect(human.game_symbol).to be PlayerSymbols::X

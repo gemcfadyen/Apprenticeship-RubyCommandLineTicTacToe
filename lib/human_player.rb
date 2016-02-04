@@ -3,7 +3,7 @@ require 'player'
 class HumanPlayer
   include Player
 
-  def initialize(command_line_interface, symbol)
+  def initialize(symbol, command_line_interface)
     @command_line_interface = command_line_interface
     super(symbol)
   end
