@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'ttt-core', 2.0.0
+gem 'ttt-core', '2.0.0'
 
 # A way of pointing to the local core code, for testing local changes
 #gem 'ttt-core', '1.0.0', path: '../../Ruby/Apprenticeship-RubyTicTacToe'
