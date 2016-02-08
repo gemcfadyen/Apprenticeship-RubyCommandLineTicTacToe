@@ -30,7 +30,7 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   Coveralls::SimpleCov::Formatter
 ])
 
-lib = File.expand_path("../../lib", __FILE__)
+lib = File.expand_path("../lib", __FILE__)
 $:.unshift(lib)
 
 RSpec.configure do |config|

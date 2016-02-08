@@ -104,9 +104,7 @@ class CommandLineUI
   end
 
   def format_player_option
-    Proc.new do |input|
-      PlayerOptions::get_player_type_for_id(Integer(input))
-    end
+    lambda { |input| PlayerOptions::player_type_for_id(Integer(input)) }
   end
 
   def numeric?(input)
